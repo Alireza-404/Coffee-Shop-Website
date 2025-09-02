@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: kalamehThin;
+    src: url('../font/WebFonts/_Woff2/KalamehWeb-Thin.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: kalamehRegular;
+    src: url('../font/WebFonts/_Woff2/KalamehWeb-Regular.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: kalamehBold;
+    src: url('../font/WebFonts/_Woff2/KalamehWeb-Bold.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: kalamehBlack;
+    src: url('../font/WebFonts/_Woff2/KalamehWeb-Black.woff2') format('woff2');
+  }
+
+  @keyframes openMenu {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes translate {
+    0% {
+      transform: translateY(-50px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  * {
+    transition: all 50ms;
+  }
+
+  *::selection {
+    @apply text-white;
+    background-color: #976b3db3;
+  }
+}
+
+@layer components {
+  .cart-body-box::-webkit-scrollbar {
+    width: 5px !important;
+  }
+
+  .cart-body-box::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05) !important;
+  }
+
+  .cart-body-box::-webkit-scrollbar-thumb {
+    background: rgba(131, 131, 131, 0.57) !important;
+    border-radius: 5px !important;
+  }
+
+  body::-webkit-scrollbar {
+    width: 10px !important;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05) !important;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: rgba(131, 131, 131, 0.57) !important;
+    border-radius: 2px !important;
+  }
+
+  .active {
+    position: relative;
+    color: #fdba74 !important;
+    padding-right: 1rem !important;
+  }
+
+  .active::after {
+    content: '' !important;
+    width: 4px !important;
+    height: 4px !important;
+    border-radius: 9999px !important;
+    background: #fdba74 !important;
+    position: absolute !important;
+    top: 50%;
+    right: 7px;
+    transform: translate(-50%, -50%);
+  }
+
+  .header-bg-desktop {
+    background-image: url('../Images/headerBgDesktop.webp');
+  }
+
+  .header-bg-mobile {
+    background-image: url('../Images/headerBgMobile.webp');
+  }
+
+  .background-right {
+    background-image: linear-gradient(
+        270deg,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.1)
+      ),
+      url('../Images/Categories/category-right.jpg');
+  }
+
+  .background-left {
+    background-image: linear-gradient(
+        270deg,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.1)
+      ),
+      url('../Images/Categories/category-left.jpg');
+  }
+
+  .circle {
+    @apply rounded-full border flex justify-center items-center;
+  }
+
+  @media screen and (min-width: 1280px) {
+    html.dark .main-bg {
+      background-image: url('../Images/main-bg.png');
+    }
+
+    .main-bg {
+      background-image: linear-gradient(
+          rgba(229, 231, 235, 0.45),
+          rgba(229, 231, 235, 0.45)
+        ),
+        url('../Images/main-bg.png');
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+
+  .snowflake {
+    position: absolute;
+    top: -10%;
+    color: white;
+    font-size: 24px;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+
+  .snow-bg {
+    animation: both 30s snow-bg !important;
+  }
+
+  @keyframes snow-bg {
+
+    0% {
+      z-index: 50;
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0.9;
+    }
+
+  }
+}
