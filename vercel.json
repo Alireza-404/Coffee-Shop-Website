@@ -1,8 +1,14 @@
 {
     "builds": [
         {
-            "src": "Public/index.html",
+            "src": "Public/**",
             "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/Public/$1"
         }
     ]
 }
